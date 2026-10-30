@@ -7,12 +7,10 @@ import { useSession } from "@/lib/use-session";
 import { getMyRoles, signOutEverywhere } from "@/lib/account-data";
 
 export const navLinks = [
-  { label: "Home", href: "/" },
   { label: "Find Tutors", href: "/tutors" },
   { label: "Learning Materials", href: "/#materials" },
-  { label: "Freelancers", href: "/#freelancers" },
-  { label: "Membership", href: "/#membership" },
-  { label: "Sign up as an Educator", href: "/auth/teacher?mode=signup" },
+  { label: "Freelancers", href: "/freelancers" },
+  { label: "Membership", href: "/membership" },
 ];
 
 export function Logo() {

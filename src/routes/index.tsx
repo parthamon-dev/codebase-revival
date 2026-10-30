@@ -59,7 +59,6 @@ function Index() {
               <div className="mt-8"><HeroSearch /></div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button variant="pill" size="xl" onClick={() => scrollTo("marketplace")}>Explore Now <ArrowRight /></Button>
-                <Button variant="pill-outline" size="xl" asChild><Link to="/auth/teacher" search={{ mode: "signup" }}>Sign up as an Educator</Link></Button>
               </div>
             </div>
             <div className="relative">
@@ -108,7 +107,7 @@ function Index() {
         </Section>
 
         {/* MATERIALS */}
-        <Section id="materials" eyebrow="Learning materials" title="Resources made by educators" action={<Button variant="pill-outline">Browse materials</Button>}>
+        <Section id="materials" eyebrow="Learning materials" title="Resources made by educators" action={<Button variant="pill-outline" asChild><Link to="/membership">Browse materials</Link></Button>}>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {materials.map((m) => (
               <article key={m.title} className="card-soft overflow-hidden">
@@ -125,7 +124,7 @@ function Index() {
         </Section>
 
         {/* FREELANCERS */}
-        <Section id="freelancers" eyebrow="Freelancer services" title="Talented help for educators and learners" action={<Button variant="pill-outline">See all services</Button>}>
+        <Section id="freelancers" eyebrow="Freelancer services" title="Talented help for educators and learners" action={<Button variant="pill-outline" asChild><Link to="/freelancers">See all services</Link></Button>}>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <article key={s.title} className="card-soft overflow-hidden">

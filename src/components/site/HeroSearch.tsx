@@ -25,7 +25,7 @@ export function HeroSearch() {
   return (
     <div className="w-full max-w-2xl">
       <div role="tablist" className="mb-3 inline-flex flex-wrap gap-1 rounded-full bg-card p-1 shadow-soft">
-        {categories.map((c) => (
+        {categories.filter((c) => c.id !== "freelancers").map((c) => (
           <button key={c.id} role="tab" aria-selected={cat === c.id} onClick={() => setCat(c.id)}
             className={`rounded-full px-4 py-2 text-sm font-bold transition-colors ${cat === c.id ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}>
             {c.label}
@@ -41,9 +41,9 @@ export function HeroSearch() {
       <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
         <span className="font-semibold text-muted-foreground">Popular:</span>
         {popularSearches.map((p) => (
-          <button key={p} onClick={() => { setQ(p); go(undefined, p); }} className="rounded-full border border-border bg-card/70 px-3 py-1 font-semibold hover:border-primary hover:text-primary">
+          <span key={p} className="rounded-full border border-border bg-card/70 px-3 py-1 font-semibold">
             {p}
-          </button>
+          </span>
         ))}
       </div>
       {note && <p className="mt-3 text-sm font-semibold text-primary" aria-live="polite">{note}</p>}
