@@ -12,6 +12,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { materials, services, faqs } from "@/data/sample";
 import { TutorCard } from "@/components/site/TutorCard";
 import { tutorsQuery } from "@/routes/tutors.index";
+import { JoinMembershipButton } from "@/components/site/JoinMembershipButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -188,7 +189,7 @@ function Index() {
               <p className="font-bold text-muted-foreground">Monthly plan</p>
               <p className="mt-2 font-display text-6xl font-extrabold">RM20<span className="text-xl text-muted-foreground">/month</span></p>
               <p className="mt-2 text-sm text-muted-foreground">Covers eligible resources only</p>
-              <Button variant="pill" size="xl" className="mt-6 w-full">Join Membership</Button>
+              <JoinMembershipButton />
             </div>
           </div>
         </section>
