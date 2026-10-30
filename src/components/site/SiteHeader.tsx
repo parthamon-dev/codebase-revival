@@ -5,6 +5,17 @@ import { Menu, X, LogOut, GraduationCap, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/lib/use-session";
 import { getMyRoles, signOutEverywhere } from "@/lib/account-data";
+import { fetchInbox } from "@/lib/enquiries";
+import { supabase } from "@/integrations/supabase/client";
+
+function UnreadBadge({ count }: { count: number }) {
+  if (!count) return null;
+  return (
+    <span aria-label={`${count} unread messages`} className="ml-1 rounded-full bg-accent px-2 py-0.5 text-[11px] font-bold text-accent-foreground">
+      {count}
+    </span>
+  );
+}
 import logoUrl from "@/assets/logo.png";
 
 export const navLinks = [
@@ -33,6 +44,22 @@ function useAccountNav() {
   });
   const roles = rolesQuery.data ?? [];
 
+  const unreadQuery = useQuery({
+    queryKey: ["inbox", "header-unread", user?.id, roles.join(",")],
+    enabled: !!user && roles.length > 0,
+    refetchInterval: 30000,
+    queryFn: async () => {
+      const out = { student: 0, teacher: 0 };
+      if (roles.includes("student")) out.student = (await fetchInbox(user!.id, "student")).filter((t) => t.unread).length;
+      if (roles.includes("teacher")) {
+        const { data: tp } = await supabase.from("teacher_profiles").select("id").eq("user_id", user!.id).maybeSingle();
+        if (tp) out.teacher = (await fetchInbox(user!.id, "teacher", tp.id)).filter((t) => t.unread).length;
+      }
+      return out;
+    },
+  });
+  const unread = unreadQuery.data ?? { student: 0, teacher: 0 };
+
   async function signOut() {
     await queryClient.cancelQueries();
     queryClient.clear();
@@ -40,7 +67,7 @@ function useAccountNav() {
     navigate({ to: "/auth", replace: true });
   }
 
-  return { user, loading, roles, signOut };
+  return { user, loading, roles, signOut, unread };
 }
 
 export function SiteHeader() {
