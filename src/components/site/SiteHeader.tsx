@@ -72,7 +72,7 @@ function useAccountNav() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const { user, loading, roles, signOut } = useAccountNav();
+  const { user, loading, roles, signOut, unread } = useAccountNav();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
@@ -91,14 +91,14 @@ export function SiteHeader() {
               {roles.includes("student") && (
                 <Button variant="ghost" className="rounded-full font-semibold" asChild>
                   <Link to="/account/student">
-                    <GraduationCap /> Student area
+                    <GraduationCap /> Student area <UnreadBadge count={unread.student} />
                   </Link>
                 </Button>
               )}
               {roles.includes("teacher") && (
                 <Button variant="ghost" className="rounded-full font-semibold" asChild>
                   <Link to="/account/teacher">
-                    <BookOpen /> Teacher dashboard
+                    <BookOpen /> Teacher dashboard <UnreadBadge count={unread.teacher} />
                   </Link>
                 </Button>
               )}
@@ -139,14 +139,14 @@ export function SiteHeader() {
                 {roles.includes("student") && (
                   <Button variant="pill-outline" className="w-full" asChild>
                     <Link to="/account/student" onClick={() => setOpen(false)}>
-                      <GraduationCap /> Student area
+                      <GraduationCap /> Student area <UnreadBadge count={unread.student} />
                     </Link>
                   </Button>
                 )}
                 {roles.includes("teacher") && (
                   <Button variant="pill-outline" className="w-full" asChild>
                     <Link to="/account/teacher" onClick={() => setOpen(false)}>
-                      <BookOpen /> Teacher dashboard
+                      <BookOpen /> Teacher dashboard <UnreadBadge count={unread.teacher} />
                     </Link>
                   </Button>
                 )}
