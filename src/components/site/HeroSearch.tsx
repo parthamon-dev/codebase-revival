@@ -38,10 +38,11 @@ export function HeroSearch() {
           className="min-w-0 flex-1 bg-transparent py-2 outline-none placeholder:text-muted-foreground" />
         <Button type="submit" variant="pill" size="xl">Search</Button>
       </form>
-      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-        <span className="font-semibold text-muted-foreground">Popular:</span>
-        {popularSearches.map((p) => (
-          <span key={p} className="rounded-full border border-border bg-card/70 px-3 py-1 font-semibold">
+      <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold text-muted-foreground">
+        <span>Popular:</span>
+        {popularSearches.map((p, i) => (
+          <span key={p} className="flex items-center gap-3">
+            {i > 0 && <span aria-hidden className="opacity-40">·</span>}
             {p}
           </span>
         ))}
