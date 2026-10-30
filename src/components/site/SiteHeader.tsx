@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Menu, X, Sprout, LogOut, GraduationCap, BookOpen } from "lucide-react";
+import { Menu, X, LogOut, GraduationCap, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/lib/use-session";
 import { getMyRoles, signOutEverywhere } from "@/lib/account-data";
+import logoUrl from "@/assets/logo.png";
 
 export const navLinks = [
   { label: "Find Tutors", href: "/tutors" },
@@ -15,11 +16,8 @@ export const navLinks = [
 
 export function Logo() {
   return (
-    <a href="/" className="flex items-center gap-2 font-display text-xl font-extrabold text-foreground">
-      <span className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
-        <Sprout className="size-5" />
-      </span>
-      PUPUK<span className="hidden font-semibold text-primary sm:inline">Education</span>
+    <a href="/" aria-label="PUPUK Academy home" className="flex items-center">
+      <img src={logoUrl} alt="PUPUK Academy" className="h-8 w-auto sm:h-9" />
     </a>
   );
 }
