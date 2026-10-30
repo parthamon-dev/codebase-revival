@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { kindLabel } from "@/components/site/ProofDocuments";
 import { useSession } from "@/lib/use-session";
+import { AdminMemberships } from "@/components/site/AdminMemberships";
 
 export const Route = createFileRoute("/_authenticated/account/admin")({
   head: () => ({
@@ -112,6 +113,7 @@ function AdminReview() {
             })}
           </ul>
         )}
+        {isAdmin && <AdminMemberships />}
       </main>
       <SiteFooter />
     </div>
