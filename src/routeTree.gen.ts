@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as FreelancersRouteImport } from './routes/freelancers'
+import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as AuthIndexRouteImport } from './routes/auth.index'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
 import { Route as AuthStudentRouteImport } from './routes/auth.student'
@@ -35,6 +37,16 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreelancersRoute = FreelancersRouteImport.update({
+  id: '/freelancers',
+  path: '/freelancers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthIndexRoute = AuthIndexRouteImport.update({
@@ -95,6 +107,8 @@ const AuthenticatedAccountEnquiriesIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRouteWithChildren
+  '/freelancers': typeof FreelancersRoute
+  '/membership': typeof MembershipRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/student': typeof AuthStudentRoute
   '/auth/teacher': typeof AuthTeacherRoute
@@ -108,6 +122,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/freelancers': typeof FreelancersRoute
+  '/membership': typeof MembershipRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/student': typeof AuthStudentRoute
   '/auth/teacher': typeof AuthTeacherRoute
@@ -124,6 +140,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
+  '/freelancers': typeof FreelancersRoute
+  '/membership': typeof MembershipRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/student': typeof AuthStudentRoute
   '/auth/teacher': typeof AuthTeacherRoute
@@ -140,6 +158,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/freelancers'
+    | '/membership'
     | '/auth/callback'
     | '/auth/student'
     | '/auth/teacher'
@@ -153,6 +173,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/freelancers'
+    | '/membership'
     | '/auth/callback'
     | '/auth/student'
     | '/auth/teacher'
@@ -168,6 +190,8 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/freelancers'
+    | '/membership'
     | '/auth/callback'
     | '/auth/student'
     | '/auth/teacher'
@@ -184,6 +208,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRouteWithChildren
+  FreelancersRoute: typeof FreelancersRoute
+  MembershipRoute: typeof MembershipRoute
   TutorsIdRoute: typeof TutorsIdRoute
   TutorsIndexRoute: typeof TutorsIndexRoute
 }
@@ -209,6 +235,20 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelancers': {
+      id: '/freelancers'
+      path: '/freelancers'
+      fullPath: '/freelancers'
+      preLoaderRoute: typeof FreelancersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/': {
@@ -321,6 +361,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRouteWithChildren,
+  FreelancersRoute: FreelancersRoute,
+  MembershipRoute: MembershipRoute,
   TutorsIdRoute: TutorsIdRoute,
   TutorsIndexRoute: TutorsIndexRoute,
 }
