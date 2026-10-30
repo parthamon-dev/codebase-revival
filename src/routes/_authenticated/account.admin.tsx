@@ -14,8 +14,8 @@ import { AdminMemberships } from "@/components/site/AdminMemberships";
 export const Route = createFileRoute("/_authenticated/account/admin")({
   head: () => ({
     meta: [
-      { title: "Tutor Approvals — PUPUK Education" },
-      { name: "description", content: "Review tutor proof of qualification and approve listings on PUPUK Education." },
+      { title: "Tutor Approvals — PUPUK Academy" },
+      { name: "description", content: "Review tutor proof of qualification and approve listings on PUPUK Academy." },
       { name: "robots", content: "noindex" },
     ],
   }),

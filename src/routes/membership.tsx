@@ -11,7 +11,7 @@ import { materials } from "@/data/sample";
 export const Route = createFileRoute("/membership")({
   head: () => ({
     meta: [
-      { title: "Student Learning Materials Membership — RM20/month | PUPUK Education" },
+      { title: "Student Learning Materials Membership — RM20/month | PUPUK Academy" },
       { name: "description", content: "The first PUPUK membership: unlimited access to membership-eligible worksheets, notes and revision packs for students, RM20 a month. Renews monthly, cancel anytime." },
       { property: "og:title", content: "PUPUK Student Learning Materials Membership — RM20/month" },
       { property: "og:description", content: "One simple monthly plan for eligible learning materials made by real educators. More membership types are on the way." },

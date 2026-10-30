@@ -17,9 +17,9 @@ export const tutorsQuery = queryOptions({ queryKey: ["approved-tutors"], queryFn
 export const Route = createFileRoute("/tutors/")({
   head: () => ({
     meta: [
-      { title: "Find Tutors — PUPUK Education" },
+      { title: "Find Tutors — PUPUK Academy" },
       { name: "description", content: "Browse tutors across Malaysia by subject, location, level, teaching mode and hourly fee." },
-      { property: "og:title", content: "Find Tutors — PUPUK Education" },
+      { property: "og:title", content: "Find Tutors — PUPUK Academy" },
       { property: "og:description", content: "Search and filter tutors by subject, location, level and price." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },

@@ -80,8 +80,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PUPUK Education" },
-      { name: "description", content: "Find tutors, learning materials and freelancers on PUPUK Education." },
+      { title: "PUPUK Academy" },
+      { name: "description", content: "Find tutors, learning materials and freelancers on PUPUK Academy." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

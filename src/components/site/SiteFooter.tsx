@@ -31,7 +31,7 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <p className="border-t border-border py-6 text-center text-sm text-muted-foreground">© {new Date().getFullYear()} PUPUK Education. All rights reserved.</p>
+      <p className="border-t border-border py-6 text-center text-sm text-muted-foreground">© {new Date().getFullYear()} PUPUK Academy. All rights reserved.</p>
     </footer>
   );
 }

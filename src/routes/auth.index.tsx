@@ -5,10 +5,10 @@ import { roleMeta, type AppRole } from "@/lib/account";
 export const Route = createFileRoute("/auth/")({
   head: () => ({
     meta: [
-      { title: "Sign In or Sign Up — PUPUK Education" },
-      { name: "description", content: "Choose your account type: sign in or create an account as a student or a teacher on PUPUK Education." },
-      { property: "og:title", content: "Sign In or Sign Up — PUPUK Education" },
-      { property: "og:description", content: "One account, two roles: join PUPUK Education as a student, a teacher, or both." },
+      { title: "Sign In or Sign Up — PUPUK Academy" },
+      { name: "description", content: "Choose your account type: sign in or create an account as a student or a teacher on PUPUK Academy." },
+      { property: "og:title", content: "Sign In or Sign Up — PUPUK Academy" },
+      { property: "og:description", content: "One account, two roles: join PUPUK Academy as a student, a teacher, or both." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],

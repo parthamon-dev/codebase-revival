@@ -19,8 +19,8 @@ import { studentLevels } from "@/data/sample";
 export const Route = createFileRoute("/_authenticated/account/student")({
   head: () => ({
     meta: [
-      { title: "My Student Area — PUPUK Education" },
-      { name: "description", content: "Your enquiries, tutor conversations and student profile on PUPUK Education." },
+      { title: "My Student Area — PUPUK Academy" },
+      { name: "description", content: "Your enquiries, tutor conversations and student profile on PUPUK Academy." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -96,7 +96,7 @@ function StudentArea() {
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Student area</p>
             <h1 className="mt-2 text-3xl font-extrabold md:text-5xl">Hi{name ? `, ${name.split(" ")[0]}` : ""}! 👋</h1>
             <p className="mt-3 max-w-xl text-base text-muted-foreground md:text-lg">
-              {unread > 0 ? `You have ${unread} new ${unread === 1 ? "reply" : "replies"} from tutors.` : "Your learning home on PUPUK Education."}
+              {unread > 0 ? `You have ${unread} new ${unread === 1 ? "reply" : "replies"} from tutors.` : "Your learning home on PUPUK Academy."}
             </p>
           </div>
         </section>

@@ -11,7 +11,7 @@ import { markRead, messageSchemaMax } from "@/lib/enquiries";
 export const Route = createFileRoute("/_authenticated/account/enquiries/$id")({
   head: () => ({
     meta: [
-      { title: "Conversation — PUPUK Education" },
+      { title: "Conversation — PUPUK Academy" },
       { name: "description", content: "Your conversation about a tutor enquiry." },
       { name: "robots", content: "noindex" },
     ],

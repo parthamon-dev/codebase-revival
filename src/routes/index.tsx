@@ -17,9 +17,9 @@ import { JoinMembershipButton } from "@/components/site/JoinMembershipButton";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PUPUK Education — Tutors, Learning Materials & Freelancers" },
+      { title: "PUPUK Academy — Tutors, Learning Materials & Freelancers" },
       { name: "description", content: "Discover great tutors, explore learning resources and connect with talented professionals — all in one place." },
-      { property: "og:title", content: "PUPUK Education — Grow Your Potential" },
+      { property: "og:title", content: "PUPUK Academy — Grow Your Potential" },
       { property: "og:description", content: "Find tutors, learning materials and education freelancers in one friendly marketplace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
