@@ -75,6 +75,42 @@ export type Database = {
           },
         ]
       }
+      memberships: {
+        Row: {
+          access_until: string | null
+          created_at: string
+          email: string | null
+          id: string
+          razorpay_payment_id: string | null
+          razorpay_subscription_id: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_until?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          razorpay_payment_id?: string | null
+          razorpay_subscription_id: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_until?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          razorpay_payment_id?: string | null
+          razorpay_subscription_id?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
