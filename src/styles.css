@@ -174,3 +174,15 @@
   transition: transform .25s ease, box-shadow .25s ease;
   &:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
 }
+
+.content-prose { color: var(--color-foreground); line-height: 1.75; }
+.content-prose h2 { margin-top: 2.25rem; font-size: 1.5rem; font-weight: 800; color: var(--color-primary); }
+.content-prose h3 { margin-top: 1.5rem; font-size: 1.125rem; font-weight: 700; }
+.content-prose p { margin-top: 0.75rem; color: var(--color-muted-foreground); }
+.content-prose ul, .content-prose ol { margin-top: 0.75rem; padding-left: 1.5rem; list-style: disc; color: var(--color-muted-foreground); }
+.content-prose ol { list-style: decimal; }
+.content-prose li { margin-top: 0.25rem; }
+.content-prose a { color: var(--color-primary); text-decoration: underline; }
+.content-prose strong { color: var(--color-foreground); }
+.content-prose table { margin-top: 1rem; width: 100%; border-collapse: collapse; }
+.content-prose th, .content-prose td { border: 1px solid var(--color-border); padding: 0.5rem 0.75rem; text-align: left; }

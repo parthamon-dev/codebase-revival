@@ -1,7 +1,14 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Logo, navLinks } from "./SiteHeader";
 
-const company = ["About", "Contact", "FAQs", "Terms", "Privacy", "Refund Policy"];
+const company = [
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Terms", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Refund Policy", href: "/refund" },
+];
 
 export function SiteFooter() {
   return (
@@ -27,7 +34,7 @@ export function SiteFooter() {
         <div>
           <h4 className="font-bold">Company</h4>
           <ul className="mt-4 space-y-2 text-muted-foreground">
-            {company.map((c) => <li key={c}><a href={c === "FAQs" ? "/#faq" : "/"} className="hover:text-primary">{c}</a></li>)}
+            {company.map((c) => <li key={c.label}><a href={c.href} className="hover:text-primary">{c.label}</a></li>)}
           </ul>
         </div>
       </div>
