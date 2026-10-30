@@ -177,9 +177,9 @@ function Index() {
         <section id="membership" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 sm:px-6">
           <div className="grid items-center gap-10 rounded-[2.5rem] bg-primary p-8 text-primary-foreground md:grid-cols-[1.3fr_1fr] md:p-14">
             <div>
-              <p className="text-sm font-bold uppercase tracking-widest opacity-80">Learning Materials Membership</p>
+              <p className="text-sm font-bold uppercase tracking-widest opacity-80">Student Learning Materials Membership</p>
               <h2 className="mt-3 text-4xl font-extrabold md:text-5xl">Unlimited access to eligible resources.</h2>
-              <p className="mt-4 text-lg opacity-85">One simple monthly plan covers every learning material marked <strong>“Membership eligible”</strong>. Individually priced premium items not marked eligible are sold separately.</p>
+              <p className="mt-4 text-lg opacity-85">The membership we’ve opened first. One simple monthly plan covers every learning material marked <strong>“Membership eligible”</strong>. Individually priced premium items not marked eligible are sold separately.</p>
               <ul className="mt-6 space-y-2">
                 {["Download all eligible worksheets & notes", "New eligible resources added regularly", "Cancel anytime"].map((f) => (
                   <li key={f} className="flex items-center gap-2"><Check className="size-5" /> {f}</li>
@@ -187,7 +187,8 @@ function Index() {
               </ul>
             </div>
             <div className="rounded-3xl bg-card p-8 text-center text-card-foreground shadow-lift">
-              <p className="font-bold text-muted-foreground">Monthly plan</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary">Open now · for students</p>
+              <p className="mt-3 font-bold text-muted-foreground">Monthly plan</p>
               <p className="mt-2 font-display text-6xl font-extrabold">RM20<span className="text-xl text-muted-foreground">/month</span></p>
               <p className="mt-2 text-sm text-muted-foreground">Covers eligible resources only</p>
               <JoinMembershipButton />

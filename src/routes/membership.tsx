@@ -100,7 +100,7 @@ function MembershipPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-7 text-sm text-muted-foreground">Want a say in what comes next? <a href="mailto:hello@pupuk.my" className="font-bold text-primary underline underline-offset-4">Tell us what you’d pay for.</a></p>
+                <p className="mt-7 text-sm text-muted-foreground">Want a say in what comes next? Tell us what you’d pay for — your answers shape which membership we open next.</p>
               </div>
             </div>
           </div>
