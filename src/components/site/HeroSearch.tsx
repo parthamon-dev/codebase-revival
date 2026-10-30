@@ -42,8 +42,8 @@ export function HeroSearch() {
         <span>Popular:</span>
         {popularSearches.map((p, i) => (
           <span key={p} className="flex items-center gap-3">
-            {i > 0 && <span aria-hidden className="opacity-40">·</span>}
             {p}
+            {i < popularSearches.length - 1 && <span aria-hidden className="opacity-40">·</span>}
           </span>
         ))}
       </div>
