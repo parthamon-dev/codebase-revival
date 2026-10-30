@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 - Shared site chrome and section building blocks live in src/components/site; sample marketplace data lives in src/data/sample.ts so future pages reuse them.
+- The brand mark is an image asset (src/assets/logo.png) rendered by the shared Logo component in SiteHeader and reused by SiteFooter — never rebuild it as an icon plus text. public/favicon.png is a square crop of the same artwork, declared in src/routes/__root.tsx; derive both from the logo whenever the mark changes.
 
 - Accounts: one auth identity per email; student/teacher are rows in public.user_roles with matching role profiles (student_profiles/teacher_profiles). All account reads/writes use the browser supabase client under RLS — no server functions for account flows.
 - Protected pages live under src/routes/_authenticated/ (client-only gate redirecting to /auth); role-specific auth pages are /auth/student and /auth/teacher with an /auth chooser.
