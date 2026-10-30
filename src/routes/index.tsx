@@ -31,6 +31,7 @@ export const Route = createFileRoute("/")({
 
 function Card({ to, className, children }: { to: string; className: string; children: ReactNode }) {
   if (to === "tutors") return <Link to="/tutors" className={className}>{children}</Link>;
+  if (to === "materials") return <a href="/#materials" className={className}>{children}</a>;
   return <button onClick={() => scrollTo(to)} className={className}>{children}</button>;
 }
 
