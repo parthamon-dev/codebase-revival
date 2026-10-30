@@ -9,7 +9,7 @@ import { services } from "@/data/sample";
 export const Route = createFileRoute("/freelancers")({
   head: () => ({
     meta: [
-      { title: "Education Freelancers — PUPUK Education" },
+      { title: "Education Freelancers — PUPUK Academy" },
       { name: "description", content: "Design, editing, translation and more from education freelancers. Join PUPUK as a freelancer and reach students, parents and educators." },
       { property: "og:title", content: "Education Freelancers on PUPUK" },
       { property: "og:description", content: "Browse education freelancer services or join as a freelancer." },

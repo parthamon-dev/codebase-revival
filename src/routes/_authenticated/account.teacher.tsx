@@ -19,8 +19,8 @@ import { listingState, missingRequired, profileCompleteness } from "@/lib/comple
 export const Route = createFileRoute("/_authenticated/account/teacher")({
   head: () => ({
     meta: [
-      { title: "Teacher Dashboard — PUPUK Education" },
-      { name: "description", content: "Reply to student enquiries and manage your tutor listing on PUPUK Education." },
+      { title: "Teacher Dashboard — PUPUK Academy" },
+      { name: "description", content: "Reply to student enquiries and manage your tutor listing on PUPUK Academy." },
       { name: "robots", content: "noindex" },
     ],
   }),

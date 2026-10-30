@@ -38,7 +38,7 @@ export function JoinMembershipButton() {
       const rzp = new window.Razorpay!({
         key: keyId,
         subscription_id: subscriptionId,
-        name: "PUPUK Education",
+        name: "PUPUK Academy",
         description: "Membership — RM20/month",
         prefill: { email: email ?? undefined },
         handler: async (r: { razorpay_payment_id: string; razorpay_subscription_id: string; razorpay_signature: string }) => {

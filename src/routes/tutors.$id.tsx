@@ -18,8 +18,8 @@ export const Route = createFileRoute("/tutors/$id")({
     return { name: t.name, summary: [t.qualification, t.subjects.join(", ")].filter(Boolean).join(" · ") };
   },
   head: ({ loaderData }) => {
-    const title = loaderData ? `${loaderData.name} — Tutor on PUPUK Education` : "Tutor profile — PUPUK Education";
-    const desc = loaderData?.summary || "View this tutor's subjects, qualifications and availability on PUPUK Education.";
+    const title = loaderData ? `${loaderData.name} — Tutor on PUPUK Academy` : "Tutor profile — PUPUK Academy";
+    const desc = loaderData?.summary || "View this tutor's subjects, qualifications and availability on PUPUK Academy.";
     return {
       meta: [
         { title },

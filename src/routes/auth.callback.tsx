@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/auth/callback")({
   head: () => ({
     meta: [
-      { title: "Signing you in — PUPUK Education" },
+      { title: "Signing you in — PUPUK Academy" },
       { name: "robots", content: "noindex" },
     ],
   }),
