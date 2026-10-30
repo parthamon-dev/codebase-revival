@@ -131,6 +131,44 @@ export type Database = {
           },
         ]
       }
+      teacher_documents: {
+        Row: {
+          created_at: string
+          file_name: string
+          file_path: string
+          id: string
+          kind: string
+          teacher_profile_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          file_name: string
+          file_path: string
+          id?: string
+          kind: string
+          teacher_profile_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string
+          file_path?: string
+          id?: string
+          kind?: string
+          teacher_profile_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "teacher_documents_teacher_profile_id_fkey"
+            columns: ["teacher_profile_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       teacher_profiles: {
         Row: {
           achievements: Json
@@ -140,13 +178,18 @@ export type Database = {
           created_at: string
           curricula: string[]
           fee_per_hour: number | null
+          hidden_at: string | null
           id: string
           languages: string[]
+          last_active_at: string | null
+          last_checkin_at: string | null
           levels: string[]
           location: string | null
+          paused_at: string | null
           photo_url: string | null
           qualification: string | null
           qualifications: Json
+          reactivated_at: string | null
           skills: string[]
           status: string
           subjects: string[]
@@ -164,13 +207,18 @@ export type Database = {
           created_at?: string
           curricula?: string[]
           fee_per_hour?: number | null
+          hidden_at?: string | null
           id?: string
           languages?: string[]
+          last_active_at?: string | null
+          last_checkin_at?: string | null
           levels?: string[]
           location?: string | null
+          paused_at?: string | null
           photo_url?: string | null
           qualification?: string | null
           qualifications?: Json
+          reactivated_at?: string | null
           skills?: string[]
           status?: string
           subjects?: string[]
@@ -188,13 +236,18 @@ export type Database = {
           created_at?: string
           curricula?: string[]
           fee_per_hour?: number | null
+          hidden_at?: string | null
           id?: string
           languages?: string[]
+          last_active_at?: string | null
+          last_checkin_at?: string | null
           levels?: string[]
           location?: string | null
+          paused_at?: string | null
           photo_url?: string | null
           qualification?: string | null
           qualifications?: Json
+          reactivated_at?: string | null
           skills?: string[]
           status?: string
           subjects?: string[]
@@ -226,6 +279,7 @@ export type Database = {
           student_user_id: string | null
           subject: string
           teacher_profile_id: string
+          tutor_replied_at: string | null
         }
         Insert: {
           created_at?: string
@@ -238,6 +292,7 @@ export type Database = {
           student_user_id?: string | null
           subject: string
           teacher_profile_id: string
+          tutor_replied_at?: string | null
         }
         Update: {
           created_at?: string
@@ -250,6 +305,7 @@ export type Database = {
           student_user_id?: string | null
           subject?: string
           teacher_profile_id?: string
+          tutor_replied_at?: string | null
         }
         Relationships: [
           {
@@ -297,11 +353,25 @@ export type Database = {
         }
         Returns: boolean
       }
+      hide_unresponsive_tutors: { Args: never; Returns: number }
       is_enquiring_student: { Args: { _student: string }; Returns: boolean }
+      reactivate_my_listing: { Args: never; Returns: undefined }
+      teacher_heartbeat: { Args: never; Returns: undefined }
+      teacher_is_listed: { Args: { _id: string }; Returns: boolean }
       teacher_listing_complete: {
         Args: { _t: Database["public"]["Tables"]["teacher_profiles"]["Row"] }
         Returns: boolean
       }
+      tutor_activity: {
+        Args: { _ids: string[] }
+        Returns: {
+          avg_reply_minutes: number
+          last_active_at: string
+          replies: number
+          teacher_profile_id: string
+        }[]
+      }
+      tutor_checkin: { Args: { _available: boolean }; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "student" | "teacher"
